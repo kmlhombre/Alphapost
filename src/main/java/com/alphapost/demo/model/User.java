@@ -1,7 +1,6 @@
 package com.alphapost.demo.model;
 
 import com.sun.istack.NotNull;
-import com.sun.org.apache.xpath.internal.operations.Bool;
 
 import javax.persistence.*;
 import java.text.DateFormat;
