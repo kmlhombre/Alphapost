@@ -1,4 +1,4 @@
-package com.alphapost.demo.model;
+package com.alphapost.demo.models;
 
 import com.sun.istack.NotNull;
 

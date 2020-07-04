@@ -1,10 +1,6 @@
-package com.alphapost.demo.model;
-
-import com.sun.istack.NotNull;
+package com.alphapost.demo.models;
 
 import javax.persistence.*;
-import java.text.DateFormat;
-import java.util.Set;
 
 @Entity
 @Table(name = "chat")

@@ -1,4 +1,4 @@
-package com.alphapost.demo.model;
+package com.alphapost.demo.models;
 
 import com.sun.istack.NotNull;
 
@@ -6,14 +6,14 @@ import javax.persistence.*;
 import java.text.DateFormat;
 
 @Entity
-@Table(name = "like_post")
-public class Like_Post {
+@Table(name = "like_comment")
+public class Like_Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long likeID;
 
     @ManyToOne
-    private Post post;
+    private Comment comment;
 
     @ManyToOne
     private User user;
@@ -21,14 +21,22 @@ public class Like_Post {
     @NotNull
     private DateFormat date;
 
-    public Like_Post() {
+    public Like_Comment() {
     }
 
-    public Like_Post(Long likeID, Post post, User user, DateFormat date) {
+    public Like_Comment(Long likeID, User user, DateFormat date, Comment comment) {
         this.likeID = likeID;
-        this.post = post;
         this.user = user;
         this.date = date;
+        this.comment = comment;
+    }
+
+    public Comment getComment() {
+        return comment;
+    }
+
+    public void setComment(Comment comment) {
+        this.comment = comment;
     }
 
     public Long getLikeID() {
@@ -37,14 +45,6 @@ public class Like_Post {
 
     public void setLikeID(Long likeID) {
         this.likeID = likeID;
-    }
-
-    public Post getPost() {
-        return post;
-    }
-
-    public void setPost(Post post) {
-        this.post = post;
     }
 
     public User getUser() {

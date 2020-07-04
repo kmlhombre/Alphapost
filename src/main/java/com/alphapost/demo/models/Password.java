@@ -1,4 +1,4 @@
-package com.alphapost.demo.model;
+package com.alphapost.demo.models;
 
 import com.sun.istack.NotNull;
 
@@ -14,16 +14,15 @@ public class Password {
     @NotNull
     private String password;
 
-    @OneToOne(mappedBy = "password")
-    private User user;
+    private long userid;
 
     public Password() {
     }
 
-    public Password(Long passwordID, String password, User user) {
+    public Password(Long passwordID, String password, long userid) {
         this.passwordID = passwordID;
         this.password = password;
-        this.user = user;
+        this.userid = userid;
     }
 
     public Long getPasswordID() {
@@ -42,11 +41,11 @@ public class Password {
         this.password = password;
     }
 
-    public User getUser() {
-        return user;
+    public long getUser() {
+        return userid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUser(long user) {
+        this.userid = user;
     }
 }
