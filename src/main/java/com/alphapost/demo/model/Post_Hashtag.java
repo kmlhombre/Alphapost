@@ -15,6 +15,9 @@ public class Post_Hashtag {
     @ManyToOne
     private Post post;
 
+    public Post_Hashtag() {
+    }
+
     public Post_Hashtag(Long id, Hashtag hashtag, Post post) {
         this.id = id;
         this.hashtag = hashtag;

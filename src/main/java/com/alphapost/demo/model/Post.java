@@ -24,6 +24,9 @@ public class Post {
 
     private String localization;
 
+    public Post() {
+    }
+
     public Post(Long postID, User author, String description, DateFormat date, String photo_url, String localization) {
         this.postID = postID;
         this.author = author;

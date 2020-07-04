@@ -23,6 +23,9 @@ public class Message {
 
     private DateFormat date;
 
+    public Message() {
+    }
+
     public Message(Long messageID, String message, User user_from, User user_to, DateFormat date) {
         this.messageID = messageID;
         this.message = message;

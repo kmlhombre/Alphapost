@@ -21,6 +21,9 @@ public class Like_Comment {
     @NotNull
     private DateFormat date;
 
+    public Like_Comment() {
+    }
+
     public Like_Comment(Long likeID, User user, DateFormat date, Comment comment) {
         this.likeID = likeID;
         this.user = user;

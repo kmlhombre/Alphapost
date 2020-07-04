@@ -21,6 +21,9 @@ public class Like_Post {
     @NotNull
     private DateFormat date;
 
+    public Like_Post() {
+    }
+
     public Like_Post(Long likeID, Post post, User user, DateFormat date) {
         this.likeID = likeID;
         this.post = post;

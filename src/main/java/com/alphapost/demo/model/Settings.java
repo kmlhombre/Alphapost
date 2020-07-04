@@ -17,6 +17,9 @@ public class Settings {
     @OneToOne(mappedBy = "user_settings")
     private User user;
 
+    public Settings() {
+    }
+
     public Settings(Long settingsID, Boolean theme, User user) {
         SettingsID = settingsID;
         this.theme = theme;

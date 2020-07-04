@@ -17,6 +17,9 @@ public class Password {
     @OneToOne(mappedBy = "password")
     private User user;
 
+    public Password() {
+    }
+
     public Password(Long passwordID, String password, User user) {
         this.passwordID = passwordID;
         this.password = password;

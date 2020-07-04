@@ -19,6 +19,9 @@ public class Chat {
     @ManyToOne
     private User user2;
 
+    public Chat() {
+    }
+
     public Chat(Long chatID, User user1, User user2) {
         this.chatID = chatID;
         this.user1 = user1;

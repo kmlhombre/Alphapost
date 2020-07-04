@@ -24,6 +24,9 @@ public class Comment {
     @NotNull
     private DateFormat date;
 
+    public Comment() {
+    }
+
     public Comment(Long commentID, User author, Post post, String text, DateFormat date) {
         this.commentID = commentID;
         this.author = author;

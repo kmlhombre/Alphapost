@@ -14,6 +14,9 @@ public class Hashtag {
     @NotNull
     private String name;
 
+    public Hashtag() {
+    }
+
     public Hashtag(Long hashtagID, String name) {
         this.hashtagID = hashtagID;
         this.name = name;

@@ -22,6 +22,9 @@ public class Follow {
 
     private DateFormat date;
 
+    public Follow() {
+    }
+
     public Follow(Long followID, User whoID, User whomID, DateFormat date) {
         this.followID = followID;
         this.whoID = whoID;

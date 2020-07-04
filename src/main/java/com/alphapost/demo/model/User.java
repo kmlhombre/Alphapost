@@ -20,7 +20,7 @@ public class User {
     @Column(unique = true)
     private String email;
 
-    private Boolean status;
+    private String status;
 
     private DateFormat date;
 
@@ -28,13 +28,43 @@ public class User {
 
     private String description;
 
+    private Boolean suspended;
+
+    public User(Long userID, String username, String email, String status, DateFormat date, String main_photo, String description, Boolean suspended, Settings user_settings, Password password) {
+        UserID = userID;
+        this.username = username;
+        this.email = email;
+        this.status = status;
+        this.date = date;
+        this.main_photo = main_photo;
+        this.description = description;
+        this.suspended = suspended;
+        this.user_settings = user_settings;
+        this.password = password;
+    }
+
+    public User() {
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public Boolean getSuspended() {
+        return suspended;
+    }
+
+    public void setSuspended(Boolean suspended) {
+        this.suspended = suspended;
+    }
+
     @OneToOne(cascade = CascadeType.ALL)
     private Settings user_settings;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Password password;
 
-    public User(Long userID, String username, String email, Boolean status, DateFormat date, String main_photo, String description, Settings user_settings, Password password) {
+    public User(Long userID, String username, String email, String status, DateFormat date, String main_photo, String description, Settings user_settings, Password password) {
         UserID = userID;
         this.username = username;
         this.email = email;
@@ -44,6 +74,7 @@ public class User {
         this.description = description;
         this.user_settings = user_settings;
         this.password = password;
+        this.suspended = false;
     }
 
     public Password getPassword() {
@@ -86,12 +117,8 @@ public class User {
         this.user_settings = user_settings;
     }
 
-    public Boolean getStatus() {
+    public String getStatus() {
         return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
     }
 
     public DateFormat getDate() {
