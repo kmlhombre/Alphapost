@@ -15,7 +15,7 @@ public class Settings {
     private Boolean theme;
 
     @OneToOne(mappedBy = "user_settings")
-    private User user;
+    private User userid;
 
     public Settings() {
     }
@@ -23,7 +23,7 @@ public class Settings {
     public Settings(Long settingsID, Boolean theme, User user) {
         SettingsID = settingsID;
         this.theme = theme;
-        this.user = user;
+        this.userid = user;
     }
 
     public Long getSettingsID() {
@@ -43,10 +43,10 @@ public class Settings {
     }
 
     public User getUser() {
-        return user;
+        return userid;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.userid = user;
     }
 }

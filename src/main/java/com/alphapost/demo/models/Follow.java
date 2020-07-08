@@ -14,11 +14,11 @@ public class Follow {
 
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
-    private User whoID;
+    private User who;
 
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
-    private User whomID;
+    private User whom;
 
     private DateFormat date;
 
@@ -27,8 +27,8 @@ public class Follow {
 
     public Follow(Long followID, User whoID, User whomID, DateFormat date) {
         this.followID = followID;
-        this.whoID = whoID;
-        this.whomID = whomID;
+        this.who = whoID;
+        this.whom = whomID;
         this.date = date;
     }
 
@@ -41,19 +41,19 @@ public class Follow {
     }
 
     public User getWhoID() {
-        return whoID;
+        return who;
     }
 
     public void setWhoID(User whoID) {
-        this.whoID = whoID;
+        this.who = whoID;
     }
 
     public User getWhomID() {
-        return whomID;
+        return whom;
     }
 
     public void setWhomID(User whomID) {
-        this.whomID = whomID;
+        this.whom = whomID;
     }
 
     public DateFormat getDate() {

@@ -13,10 +13,10 @@ public class Like_Comment {
     private Long likeID;
 
     @ManyToOne
-    private Comment comment;
+    private Comment commentid;
 
     @ManyToOne
-    private User user;
+    private User userid;
 
     @NotNull
     private DateFormat date;
@@ -26,17 +26,17 @@ public class Like_Comment {
 
     public Like_Comment(Long likeID, User user, DateFormat date, Comment comment) {
         this.likeID = likeID;
-        this.user = user;
+        this.userid = user;
         this.date = date;
-        this.comment = comment;
+        this.commentid = comment;
     }
 
     public Comment getComment() {
-        return comment;
+        return commentid;
     }
 
     public void setComment(Comment comment) {
-        this.comment = comment;
+        this.commentid = comment;
     }
 
     public Long getLikeID() {
@@ -48,11 +48,11 @@ public class Like_Comment {
     }
 
     public User getUser() {
-        return user;
+        return userid;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.userid = user;
     }
 
     public DateFormat getDate() {

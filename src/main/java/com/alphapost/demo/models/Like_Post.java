@@ -16,7 +16,7 @@ public class Like_Post {
     private Post post;
 
     @ManyToOne
-    private User user;
+    private User userid;
 
     @NotNull
     private DateFormat date;
@@ -27,7 +27,7 @@ public class Like_Post {
     public Like_Post(Long likeID, Post post, User user, DateFormat date) {
         this.likeID = likeID;
         this.post = post;
-        this.user = user;
+        this.userid = user;
         this.date = date;
     }
 
@@ -48,11 +48,11 @@ public class Like_Post {
     }
 
     public User getUser() {
-        return user;
+        return userid;
     }
 
     public void setUser(User user) {
-        this.user = user;
+        this.userid = user;
     }
 
     public DateFormat getDate() {

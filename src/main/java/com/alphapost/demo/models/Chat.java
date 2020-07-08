@@ -10,18 +10,18 @@ public class Chat {
     private Long chatID;
 
     @ManyToOne
-    private User user1;
+    private User userid1;
 
     @ManyToOne
-    private User user2;
+    private User userid2;
 
     public Chat() {
     }
 
     public Chat(Long chatID, User user1, User user2) {
         this.chatID = chatID;
-        this.user1 = user1;
-        this.user2 = user2;
+        this.userid1 = user1;
+        this.userid2 = user2;
     }
 
     public Long getChatID() {
@@ -33,18 +33,18 @@ public class Chat {
     }
 
     public User getUser1() {
-        return user1;
+        return userid1;
     }
 
     public void setUser1(User user1) {
-        this.user1 = user1;
+        this.userid1 = user1;
     }
 
     public User getUser2() {
-        return user2;
+        return userid2;
     }
 
     public void setUser2(User user2) {
-        this.user2 = user2;
+        this.userid2 = user2;
     }
 }
