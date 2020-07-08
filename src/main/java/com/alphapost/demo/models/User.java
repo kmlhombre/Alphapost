@@ -10,24 +10,30 @@ import java.text.DateFormat;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userid")
     private Long UserID;
 
     @NotNull
-    @Column(unique = true)
+    @Column(unique = true, name = "username")
     private String username;
 
     @NotNull
-    @Column(unique = true)
+    @Column(unique = true, name = "email")
     private String email;
 
+    @Column(name = "status")
     private String status;
 
+    @Column(name = "date")
     private DateFormat date;
 
+    @Column(name = "main_photo")
     private String main_photo;
 
+    @Column(name = "description")
     private String description;
 
+    @Column(name = "suspended")
     private Boolean suspended;
 
     public User(Long userID, String username, String email, String status, DateFormat date, String main_photo, String description, Boolean suspended, Settings user_settings, Password password) {
