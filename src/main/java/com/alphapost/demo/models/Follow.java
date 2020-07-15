@@ -12,7 +12,6 @@ public class Follow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long followID;
 
-<<<<<<< Updated upstream
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     private User whoID;
@@ -20,18 +19,13 @@ public class Follow {
     @NotNull
     @ManyToOne(cascade = CascadeType.ALL)
     private User whomID;
-=======
-    private Long who;
-
-    private Long whom;
->>>>>>> Stashed changes
 
     private DateFormat date;
 
     public Follow() {
     }
 
-    public Follow(Long followID, Long whoID, Long whomID, DateFormat date) {
+    public Follow(Long followID, User whoID, User whomID, DateFormat date) {
         this.followID = followID;
         this.whoID = whoID;
         this.whomID = whomID;
@@ -46,7 +40,6 @@ public class Follow {
         this.followID = followID;
     }
 
-<<<<<<< Updated upstream
     public User getWhoID() {
         return whoID;
     }
@@ -61,22 +54,6 @@ public class Follow {
 
     public void setWhomID(User whomID) {
         this.whomID = whomID;
-=======
-    public Long getWhoID() {
-        return who;
-    }
-
-    public void setWhoID(Long whoID) {
-        this.who = whoID;
-    }
-
-    public Long getWhomID() {
-        return whom;
-    }
-
-    public void setWhomID(Long whomID) {
-        this.whom = whomID;
->>>>>>> Stashed changes
     }
 
     public DateFormat getDate() {

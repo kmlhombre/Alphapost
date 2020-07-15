@@ -9,14 +9,16 @@ public class Post_Hashtag {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private Long hashtag;
+    @ManyToOne
+    private Hashtag hashtag;
 
-    private Long post;
+    @ManyToOne
+    private Post post;
 
     public Post_Hashtag() {
     }
 
-    public Post_Hashtag(Long id, Long hashtag, Long post) {
+    public Post_Hashtag(Long id, Hashtag hashtag, Post post) {
         this.id = id;
         this.hashtag = hashtag;
         this.post = post;
@@ -30,19 +32,19 @@ public class Post_Hashtag {
         this.id = id;
     }
 
-    public Long getHashtag() {
+    public Hashtag getHashtag() {
         return hashtag;
     }
 
-    public void setHashtag(Long hashtag) {
+    public void setHashtag(Hashtag hashtag) {
         this.hashtag = hashtag;
     }
 
-    public Long getPost() {
+    public Post getPost() {
         return post;
     }
 
-    public void setPost(Long post) {
+    public void setPost(Post post) {
         this.post = post;
     }
 }

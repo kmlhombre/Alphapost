@@ -15,16 +15,18 @@ public class Message {
     @NotNull
     private String message;
 
-    private Long user_from;
+    @ManyToOne
+    private User user_from;
 
-    private Long user_to;
+    @ManyToOne
+    private User user_to;
 
     private DateFormat date;
 
     public Message() {
     }
 
-    public Message(Long messageID, String message, Long user_from, Long user_to, DateFormat date) {
+    public Message(Long messageID, String message, User user_from, User user_to, DateFormat date) {
         this.messageID = messageID;
         this.message = message;
         this.user_from = user_from;
@@ -48,19 +50,19 @@ public class Message {
         this.message = message;
     }
 
-    public Long getUser_from() {
+    public User getUser_from() {
         return user_from;
     }
 
-    public void setUser_from(Long user_from) {
+    public void setUser_from(User user_from) {
         this.user_from = user_from;
     }
 
-    public Long getUser_to() {
+    public User getUser_to() {
         return user_to;
     }
 
-    public void setUser_to(Long user_to) {
+    public void setUser_to(User user_to) {
         this.user_to = user_to;
     }
 

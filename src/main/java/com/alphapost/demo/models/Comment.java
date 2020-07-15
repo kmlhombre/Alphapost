@@ -12,9 +12,11 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentID;
 
-    private Long author;
+    @ManyToOne
+    private User author;
 
-    private Long post;
+    @ManyToOne
+    private Post post;
 
     @NotNull
     private String text;
@@ -25,7 +27,7 @@ public class Comment {
     public Comment() {
     }
 
-    public Comment(Long commentID, Long author, Long post, String text, DateFormat date) {
+    public Comment(Long commentID, User author, Post post, String text, DateFormat date) {
         this.commentID = commentID;
         this.author = author;
         this.post = post;
@@ -41,19 +43,19 @@ public class Comment {
         this.commentID = commentID;
     }
 
-    public Long getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(Long author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
-    public Long getPost() {
+    public Post getPost() {
         return post;
     }
 
-    public void setPost(Long post) {
+    public void setPost(Post post) {
         this.post = post;
     }
 

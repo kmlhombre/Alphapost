@@ -12,7 +12,8 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long postID;
 
-    private Long author;
+    @ManyToOne
+    private User author;
 
     private String description;
 
@@ -26,7 +27,7 @@ public class Post {
     public Post() {
     }
 
-    public Post(Long postID, Long author, String description, DateFormat date, String photo_url, String localization) {
+    public Post(Long postID, User author, String description, DateFormat date, String photo_url, String localization) {
         this.postID = postID;
         this.author = author;
         this.description = description;
@@ -43,11 +44,11 @@ public class Post {
         this.postID = postID;
     }
 
-    public Long getAuthor() {
+    public User getAuthor() {
         return author;
     }
 
-    public void setAuthor(Long author) {
+    public void setAuthor(User author) {
         this.author = author;
     }
 
