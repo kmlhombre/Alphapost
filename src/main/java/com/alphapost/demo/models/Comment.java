@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.text.DateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "comment")
@@ -12,27 +13,25 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long commentID;
 
-    @ManyToOne
-    private User author;
+    private Long author;
 
-    @ManyToOne
-    private Post post;
+    private Long post;
 
     @NotNull
     private String text;
 
     @NotNull
-    private DateFormat date;
+    private Date date;
 
-    public Comment() {
-    }
-
-    public Comment(Long commentID, User author, Post post, String text, DateFormat date) {
+    public Comment(Long commentID, Long author, Long post, String text, Date date) {
         this.commentID = commentID;
         this.author = author;
         this.post = post;
         this.text = text;
         this.date = date;
+    }
+
+    public Comment() {
     }
 
     public Long getCommentID() {
@@ -43,19 +42,19 @@ public class Comment {
         this.commentID = commentID;
     }
 
-    public User getAuthor() {
+    public Long getAuthor() {
         return author;
     }
 
-    public void setAuthor(User author) {
+    public void setAuthor(Long author) {
         this.author = author;
     }
 
-    public Post getPost() {
+    public Long getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
+    public void setPost(Long post) {
         this.post = post;
     }
 
@@ -67,11 +66,11 @@ public class Comment {
         this.text = text;
     }
 
-    public DateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

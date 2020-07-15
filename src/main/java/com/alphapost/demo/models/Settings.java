@@ -14,16 +14,15 @@ public class Settings {
     @ColumnDefault("false")
     private Boolean theme;
 
-    @OneToOne(mappedBy = "user_settings")
-    private User user;
+    private Long userid;
 
-    public Settings() {
-    }
-
-    public Settings(Long settingsID, Boolean theme, User user) {
+    public Settings(Long settingsID, Boolean theme, Long userid) {
         SettingsID = settingsID;
         this.theme = theme;
-        this.user = user;
+        this.userid = userid;
+    }
+
+    public Settings() {
     }
 
     public Long getSettingsID() {
@@ -42,11 +41,11 @@ public class Settings {
         this.theme = theme;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserid() {
+        return userid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserid(Long userid) {
+        this.userid = userid;
     }
 }

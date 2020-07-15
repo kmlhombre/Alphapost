@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.text.DateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "like_post")
@@ -12,23 +13,21 @@ public class Like_Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long likeID;
 
-    @ManyToOne
-    private Post post;
+    private Long post;
 
-    @ManyToOne
-    private User user;
+    private Long userid;
 
     @NotNull
-    private DateFormat date;
+    private Date date;
 
-    public Like_Post() {
-    }
-
-    public Like_Post(Long likeID, Post post, User user, DateFormat date) {
+    public Like_Post(Long likeID, Long post, Long userid, Date date) {
         this.likeID = likeID;
         this.post = post;
-        this.user = user;
+        this.userid = userid;
         this.date = date;
+    }
+
+    public Like_Post() {
     }
 
     public Long getLikeID() {
@@ -39,27 +38,27 @@ public class Like_Post {
         this.likeID = likeID;
     }
 
-    public Post getPost() {
+    public Long getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
+    public void setPost(Long post) {
         this.post = post;
     }
 
-    public User getUser() {
-        return user;
+    public Long getUserid() {
+        return userid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setUserid(Long userid) {
+        this.userid = userid;
     }
 
-    public DateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

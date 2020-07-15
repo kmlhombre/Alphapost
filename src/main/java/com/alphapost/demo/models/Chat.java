@@ -9,19 +9,17 @@ public class Chat {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long chatID;
 
-    @ManyToOne
-    private User user1;
+    private Long userid1;
 
-    @ManyToOne
-    private User user2;
+    private Long userid2;
 
-    public Chat() {
+    public Chat(Long chatID, Long userid1, Long userid2) {
+        this.chatID = chatID;
+        this.userid1 = userid1;
+        this.userid2 = userid2;
     }
 
-    public Chat(Long chatID, User user1, User user2) {
-        this.chatID = chatID;
-        this.user1 = user1;
-        this.user2 = user2;
+    public Chat() {
     }
 
     public Long getChatID() {
@@ -32,19 +30,19 @@ public class Chat {
         this.chatID = chatID;
     }
 
-    public User getUser1() {
-        return user1;
+    public Long getUserid1() {
+        return userid1;
     }
 
-    public void setUser1(User user1) {
-        this.user1 = user1;
+    public void setUserid1(Long userid1) {
+        this.userid1 = userid1;
     }
 
-    public User getUser2() {
-        return user2;
+    public Long getUserid2() {
+        return userid2;
     }
 
-    public void setUser2(User user2) {
-        this.user2 = user2;
+    public void setUserid2(Long userid2) {
+        this.userid2 = userid2;
     }
 }

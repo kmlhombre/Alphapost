@@ -14,15 +14,15 @@ public class Password {
     @NotNull
     private String password;
 
-    private long userid;
+    private Long userid;
 
-    public Password() {
-    }
-
-    public Password(Long passwordID, String password, long userid) {
+    public Password(Long passwordID, String password, Long userid) {
         this.passwordID = passwordID;
         this.password = password;
         this.userid = userid;
+    }
+
+    public Password() {
     }
 
     public Long getPasswordID() {
@@ -41,11 +41,11 @@ public class Password {
         this.password = password;
     }
 
-    public long getUser() {
+    public Long getUserid() {
         return userid;
     }
 
-    public void setUser(long user) {
-        this.userid = user;
+    public void setUserid(Long userid) {
+        this.userid = userid;
     }
 }

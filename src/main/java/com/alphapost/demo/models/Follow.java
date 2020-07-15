@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.text.DateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "follow")
@@ -12,24 +13,20 @@ public class Follow {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long followID;
 
-    @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User whoID;
+    private Long who;
 
-    @NotNull
-    @ManyToOne(cascade = CascadeType.ALL)
-    private User whomID;
+    private Long whom;
 
-    private DateFormat date;
+    private Date date;
 
-    public Follow() {
+    public Follow(Long followID, Long who, Long whom, Date date) {
+        this.followID = followID;
+        this.who = who;
+        this.whom = whom;
+        this.date = date;
     }
 
-    public Follow(Long followID, User whoID, User whomID, DateFormat date) {
-        this.followID = followID;
-        this.whoID = whoID;
-        this.whomID = whomID;
-        this.date = date;
+    public Follow() {
     }
 
     public Long getFollowID() {
@@ -40,27 +37,27 @@ public class Follow {
         this.followID = followID;
     }
 
-    public User getWhoID() {
-        return whoID;
+    public Long getWho() {
+        return who;
     }
 
-    public void setWhoID(User whoID) {
-        this.whoID = whoID;
+    public void setWho(Long who) {
+        this.who = who;
     }
 
-    public User getWhomID() {
-        return whomID;
+    public Long getWhom() {
+        return whom;
     }
 
-    public void setWhomID(User whomID) {
-        this.whomID = whomID;
+    public void setWhom(Long whom) {
+        this.whom = whom;
     }
 
-    public DateFormat getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }

@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.text.DateFormat;
+import java.util.Date;
 
 @Entity
 @Table(name = "like_comment")
@@ -12,31 +13,21 @@ public class Like_Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long likeID;
 
-    @ManyToOne
-    private Comment comment;
+    private Long commentid;
 
-    @ManyToOne
-    private User user;
+    private Long userid;
 
     @NotNull
-    private DateFormat date;
+    private Date date;
+
+    public Like_Comment(Long likeID, Long commentid, Long userid, Date date) {
+        this.likeID = likeID;
+        this.commentid = commentid;
+        this.userid = userid;
+        this.date = date;
+    }
 
     public Like_Comment() {
-    }
-
-    public Like_Comment(Long likeID, User user, DateFormat date, Comment comment) {
-        this.likeID = likeID;
-        this.user = user;
-        this.date = date;
-        this.comment = comment;
-    }
-
-    public Comment getComment() {
-        return comment;
-    }
-
-    public void setComment(Comment comment) {
-        this.comment = comment;
     }
 
     public Long getLikeID() {
@@ -47,19 +38,27 @@ public class Like_Comment {
         this.likeID = likeID;
     }
 
-    public User getUser() {
-        return user;
+    public Long getCommentid() {
+        return commentid;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setCommentid(Long commentid) {
+        this.commentid = commentid;
     }
 
-    public DateFormat getDate() {
+    public Long getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Long userid) {
+        this.userid = userid;
+    }
+
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(DateFormat date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 }
