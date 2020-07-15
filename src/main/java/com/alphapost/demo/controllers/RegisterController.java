@@ -21,6 +21,11 @@ public class RegisterController {
 
     @PostMapping(name = "/register")
     public String registerSubmit(@ModelAttribute RegisterForm registerForm, Model model) {
+        /*if (true) {
+            model.addAttribute("test", registerForm.getUsername());
+            return "test";
+        }*/
+
         String username = registerForm.getUsername();
         String email = registerForm.getEmail();
         String password = registerForm.getPassword();
@@ -30,6 +35,15 @@ public class RegisterController {
             model.addAttribute("error_password", "[Passwords must be the same]");
             return "register";
         }
+<<<<<<< Updated upstream
+=======
+
+        List<User> checkUser = userRepository.findUsersByUsername(username);
+        if(checkUser.size() > 0) {
+            model.addAttribute("error_username", "[Username exist in database]");
+            return "register";
+        }
+>>>>>>> Stashed changes
 
         //czy username wolny
         //czy email wolny
@@ -43,7 +57,11 @@ public class RegisterController {
 
         Password password1 = new Password();
         password1.setPassword(password);
+<<<<<<< Updated upstream
         //password1.setUser(userid);
+=======
+        password1.setUser(users.get(0).getUserID());
+>>>>>>> Stashed changes
 
         //add password to database
         model.addAttribute("submitForm", registerForm.toString());

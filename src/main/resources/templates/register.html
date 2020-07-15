@@ -7,9 +7,11 @@
 <body>
     <form action="#" th:action="@{/register}" th:object="${registerForm}" method="post">
         Username:<br><input type="text" th:field="*{username}"/><br>
+        <span th:text="${error_username}"></span><br>
         Email:<br><input type="text" th:field="*{email}"/><br>
+        <span th:text="${error_email}"></span><br>
         Password:<br><input type="password" th:field="*{password}"/><br>
-        <span th:text="${error_password}"></span>
+        <span th:text="${error_password}"></span><br>
         Confirm password:<br><input type="password" th:field="*{confirmPassword}"/><br>
         <input type="submit" value="Register"/>
     </form>

@@ -12,11 +12,14 @@ public class Like_Post {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long likeID;
 
-    @ManyToOne
-    private Post post;
+    private Long post;
 
+<<<<<<< Updated upstream
     @ManyToOne
     private User user;
+=======
+    private Long userid;
+>>>>>>> Stashed changes
 
     @NotNull
     private DateFormat date;
@@ -24,7 +27,7 @@ public class Like_Post {
     public Like_Post() {
     }
 
-    public Like_Post(Long likeID, Post post, User user, DateFormat date) {
+    public Like_Post(Long likeID, Long post, Long user, DateFormat date) {
         this.likeID = likeID;
         this.post = post;
         this.user = user;
@@ -39,20 +42,29 @@ public class Like_Post {
         this.likeID = likeID;
     }
 
-    public Post getPost() {
+    public Long getPost() {
         return post;
     }
 
-    public void setPost(Post post) {
+    public void setPost(Long post) {
         this.post = post;
     }
 
+<<<<<<< Updated upstream
     public User getUser() {
         return user;
     }
 
     public void setUser(User user) {
         this.user = user;
+=======
+    public Long getUser() {
+        return userid;
+    }
+
+    public void setUser(Long user) {
+        this.userid = user;
+>>>>>>> Stashed changes
     }
 
     public DateFormat getDate() {

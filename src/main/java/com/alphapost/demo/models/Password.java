@@ -14,12 +14,20 @@ public class Password {
     @NotNull
     private String password;
 
+<<<<<<< Updated upstream
     private long userid;
+=======
+    private Long userid;
+>>>>>>> Stashed changes
 
     public Password() {
     }
 
+<<<<<<< Updated upstream
     public Password(Long passwordID, String password, long userid) {
+=======
+    public Password(Long passwordID, String password, Long userid) {
+>>>>>>> Stashed changes
         this.passwordID = passwordID;
         this.password = password;
         this.userid = userid;
@@ -41,11 +49,20 @@ public class Password {
         this.password = password;
     }
 
+<<<<<<< Updated upstream
     public long getUser() {
         return userid;
     }
 
     public void setUser(long user) {
         this.userid = user;
+=======
+    public Long getUser() {
+        return userid;
+    }
+
+    public void setUser(Long userid) {
+        this.userid = userid;
+>>>>>>> Stashed changes
     }
 }
